@@ -228,7 +228,7 @@ export default {
       host: 'https://evo2.fmhospeda.com'
     }
   }
-}
+},
 
   emits: ["close"],
 };
