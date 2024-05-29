@@ -9,13 +9,6 @@
         <v-form v-model="valid">
           <h3 class="mb-4">{{ $t("connection.title") }}</h3>
           <v-text-field
-            v-model="connection.host"
-            label="URL"
-            hide
-            :style="{ display: 'none' }"
-          />
-          
-          <v-text-field
             v-model="connection.globalApiKey"
             label="Global API Key"
             required
@@ -143,7 +136,7 @@ export default {
       valid: false,
       revelPassword: false,
       connection: {
-        host: BASE_URL ? window.location.origin : 'https://evo2.fmhospeda.com',
+        host: '',
         globalApiKey: "",
       },
       loading: false,
