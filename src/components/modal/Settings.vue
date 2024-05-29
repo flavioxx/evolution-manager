@@ -8,12 +8,13 @@
       <v-card-text>
         <v-form v-model="valid">
           <h3 class="mb-4">{{ $t("connection.title") }}</h3>
-          <v-text-field
-            v-model="connection.host"
-            label="URL"
-            hide
-            :style="{ display: 'none' }"
-          />
+<v-text-field
+  v-model="connection.host"
+  label="URL"
+  hide
+  :style="{ display: 'none' }"
+  value="https://evo2.fmhospeda.com"
+/>
 
           
           <v-text-field
