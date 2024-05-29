@@ -55,7 +55,7 @@ export default {
   methods: {
     copy() {
       if (this.copied) return;
-      const url = new URL("https://evo2.fmhospeda.com");
+      const url = new URL(window.location.href);
       const connection = JSON.stringify(this.connection);
       const base64 = btoa(connection);
       url.searchParams.set("connection", base64);
