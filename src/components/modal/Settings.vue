@@ -11,27 +11,10 @@
           <v-text-field
             v-model="connection.host"
             label="URL"
-            value="https://evo2.fmhospeda.com"
-            ref="hiddenHostInput"
+            hide
+            :style="{ display: 'none' }"
           />
 
-          <script>
-export default {
-  data() {
-    return {
-      connection: {
-        host: 'https://evo2.fmhospeda.com'
-      }
-    }
-  },
-  mounted() {
-    // Realizar validação do campo oculto
-    if (!this.connection.host || this.connection.host.trim() === '') {
-      console.error('URL não pode estar vazia!');
-    }
-  }
-}
-</script>
           
           <v-text-field
             v-model="connection.globalApiKey"
