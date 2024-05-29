@@ -180,7 +180,9 @@ export default {
         this.loading = true;
         this.error = false;
 
-        await this.AppStore.setConnection(connection || this.connection);
+        const connectionToSave = connection || this.connection || {};
+
+        await this.AppStore.setConnection(connectionToSave);
         this.dialog = false;
       } catch (e) {
         this.error = e.message?.message || e.message || e;
