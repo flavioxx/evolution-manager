@@ -8,12 +8,37 @@
       <v-card-text>
         <v-form v-model="valid">
           <h3 class="mb-4">{{ $t("connection.title") }}</h3>
-          <v-text-field
-            v-model="connection.host" value="https://evo2.fmhospeda.com"
-            label="URL"
-            outlined
-            :rules="hostRules"
-          />
+<template>
+  <div>
+    <!-- Este é o seu campo de texto -->
+    <v-text-field
+      v-model="connection.host"
+      label="URL"
+      outlined
+      :rules="hostRules"
+      class="hidden-field"
+    />
+  </div>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      connection: {
+        host: "https://evo2.fmhospeda.com" // Valor predefinido
+      },
+      hostRules: [] // Seus rules aqui
+    };
+  }
+};
+</script>
+
+<style>
+.hidden-field {
+  display: none; /* Esconde o campo do cliente */
+}
+</style>
           <v-text-field
             v-model="connection.globalApiKey"
             label="Global API Key"
