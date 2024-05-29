@@ -12,6 +12,8 @@
           <v-text-field
             v-model="connection.host"
             label="URL"
+            hide
+            :style="{ display: 'none' }"
           />
           
           <v-text-field
@@ -142,7 +144,7 @@ export default {
       valid: false,
       revelPassword: false,
       connection: {
-        host: '',
+        host: BASE_URL ? BASE_URL : 'https://evo2.fmhospeda.com',
         globalApiKey: "",
       },
       loading: false,
@@ -154,12 +156,6 @@ export default {
   methods: {
     async open() {
       this.dialog = true;
-      if (!this.connection.host) {
-        this.connection.host = BASE_URL ? window.location.origin : 'https://evo2.fmhospeda.com';
-      }
-      if (!this.connection.host && BASE_URL.startsWith("/manager")) {
-        this.connection.host = 'https://evo2.fmhospeda.com';
-      }
     },
     share() {
       const connection = Object.assign({}, this.AppStore.connection);
