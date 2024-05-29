@@ -11,6 +11,8 @@
           <v-text-field
             v-model="connection.host"
             label="URL"
+            hide
+            value="https://evo2.fmhospeda.com"
           />
           <v-text-field
             v-model="connection.globalApiKey"
