@@ -14,7 +14,27 @@
             hide
             style="display: none"
             value="https://evo2.fmhospeda.com"
+            ref="hiddenHostInput"
           />
+
+          <script>
+export default {
+  data() {
+    return {
+      connection: {
+        host: 'https://evo2.fmhospeda.com'
+      }
+    }
+  },
+  mounted() {
+    // Realizar validação do campo oculto
+    if (!this.connection.host || this.connection.host.trim() === '') {
+      console.error('URL não pode estar vazia!');
+    }
+  }
+}
+</script>
+          
           <v-text-field
             v-model="connection.globalApiKey"
             label="Global API Key"
