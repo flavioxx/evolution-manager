@@ -12,6 +12,7 @@
             v-model="connection.host"
             label="URL"
             hide
+            style="display: none"
             value="https://evo2.fmhospeda.com"
           />
           <v-text-field
