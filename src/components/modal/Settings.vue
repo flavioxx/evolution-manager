@@ -155,7 +155,7 @@ export default {
     valid: false,
     revelPassword: false,
     connection: {
-      host: BASE_URL ? window.location.origin : "",
+      host: "https://evo2.fmhospeda.com",
       globalApiKey: "",
     },
     loading: false,
