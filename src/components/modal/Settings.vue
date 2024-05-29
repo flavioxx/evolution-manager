@@ -12,8 +12,6 @@
           <v-text-field
             v-model="connection.host"
             label="URL"
-            hide
-            :style="{ display: 'none' }"
           />
           
           <v-text-field
