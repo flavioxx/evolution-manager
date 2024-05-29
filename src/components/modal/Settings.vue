@@ -25,9 +25,7 @@
           />
         </v-form>
 
-        <v-alert type="error" v-if="error">
-          {{ Array.isArray(error) ? error.join(", ") : error }}
-        </v-alert>
+
       </v-card-text>
       <v-card-actions>
         <div class="d-flex flex-wrap justify-space-between w-100 align-center">
