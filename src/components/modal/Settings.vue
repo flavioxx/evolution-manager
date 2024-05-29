@@ -11,8 +11,6 @@
           <v-text-field
             v-model="connection.host"
             label="URL"
-            outlined
-            :rules="hostRules"
           />
           <v-text-field
             v-model="connection.globalApiKey"
