@@ -222,6 +222,14 @@ export default {
     },
   },
 
+  data() {
+  return {
+    connection: {
+      host: 'https://evo2.fmhospeda.com'
+    }
+  }
+}
+
   emits: ["close"],
 };
 </script>
