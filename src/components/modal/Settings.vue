@@ -10,14 +10,17 @@
           <h3 class="mb-4">{{ $t("connection.title") }}</h3>
 <template>
   <div>
-    <!-- Este é o seu campo de texto -->
+    <!-- Seu campo de texto -->
     <v-text-field
       v-model="connection.host"
       label="URL"
       outlined
       :rules="hostRules"
-      class="hidden-field"
+      :style="{ visibility: 'hidden' }"
     />
+
+    <!-- Seu botão -->
+    <button @click="checkInput">Checar</button>
   </div>
 </template>
 
@@ -26,18 +29,28 @@ export default {
   data() {
     return {
       connection: {
-        host: "https://evo2.fmhospeda.com" // Valor predefinido
+        host: "https://evo2.fmhospeda.com"
       },
       hostRules: [] // Seus rules aqui
     };
+  },
+  methods: {
+    checkInput() {
+      // Verifica se o campo está preenchido
+      if (this.connection.host !== "") {
+        // Faz algo quando o campo está preenchido
+        console.log("Campo preenchido!");
+      } else {
+        // Faz algo quando o campo está vazio
+        console.log("Campo vazio!");
+      }
+    }
   }
 };
 </script>
 
 <style>
-.hidden-field {
-  display: none; /* Esconde o campo do cliente */
-}
+/* Estilos adicionais conforme necessário */
 </style>
           <v-text-field
             v-model="connection.globalApiKey"
