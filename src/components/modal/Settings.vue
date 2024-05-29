@@ -3,11 +3,19 @@
     v-model="dialog"
     max-width="500px"
     :persistent="!AppStore.validConnection"
+    @click:outside="dialog = false"
   >
-    <v-card>
+    <v-card v-if="dialog">
       <v-card-text>
         <v-form v-model="valid">
           <h3 class="mb-4">{{ $t("connection.title") }}</h3>
+          <v-text-field
+            v-model="connection.host"
+            label="URL"
+            hide
+            :style="{ display: 'none' }"
+          />
+          
           <v-text-field
             v-model="connection.globalApiKey"
             label="Global API Key"
@@ -146,15 +154,15 @@ export default {
     };
   },
   methods: {
-async open() {
-  this.dialog = true;
-  if (!this.connection.host) {
-    this.connection.host = BASE_URL ? window.location.origin : 'https://evo2.fmhospeda.com';
-  }
-  if (!this.connection.host && BASE_URL.startsWith("/manager")) {
-    this.connection.host = 'https://evo2.fmhospeda.com';
-  }
-},
+    async open() {
+      this.dialog = true;
+      if (!this.connection.host) {
+        this.connection.host = BASE_URL ? window.location.origin : 'https://evo2.fmhospeda.com';
+      }
+      if (!this.connection.host && BASE_URL.startsWith("/manager")) {
+        this.connection.host = 'https://evo2.fmhospeda.com';
+      }
+    },
     share() {
       const connection = Object.assign({}, this.AppStore.connection);
       this.$refs.share.open(connection);
