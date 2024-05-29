@@ -10,7 +10,7 @@
           <h3 class="mb-4">{{ $t("connection.title") }}</h3>
           <v-text-field
             v-model="connection.host"
-            label="https://evo2.fmhospeda.com"
+            label="URL"
             outlined
             :rules="hostRules"
           />
@@ -197,7 +197,7 @@ export default {
       this.dialog = true;
       this.connection = Object.assign({}, this.AppStore.connection);
       if (!this.connection.host && BASE_URL.startsWith("/manager"))
-        this.connection.host = window.location.origin;
+        this.connection.host = 'https://evo2.fmhospeda.com';
     },
   },
   watch: {
