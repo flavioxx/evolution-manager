@@ -9,7 +9,7 @@
         <v-form v-model="valid">
           <h3 class="mb-4">{{ $t("connection.title") }}</h3>
           <v-text-field
-            <input type="hidden" v-model="connection.host" value="https://evo2.fmhospeda.com">
+            v-model="connection.host" value="https://evo2.fmhospeda.com"
             label="URL"
             outlined
             :rules="hostRules"
