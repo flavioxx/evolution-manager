@@ -10,7 +10,7 @@ import { fileURLToPath, URL } from 'node:url'
 // https://vitejs.dev/config/
 export default defineConfig(({ command, mode }) => {
   const env = loadEnv(mode, process.cwd(), '')
-  const BASE_URL = env.VITE_BASE_URL || '/'
+  const BASE_URL = env.VITE_BASE_URL || 'https://evo2.fmhospeda.com';
 
   return {
     plugins: [
