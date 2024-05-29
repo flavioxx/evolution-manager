@@ -10,8 +10,7 @@
           <h3 class="mb-4">{{ $t("connection.title") }}</h3>
           <v-text-field
             v-model="connection.host"
-            label="URL"
-            required
+            label="https://evo2.fmhospeda.com"
             outlined
             :rules="hostRules"
           />
