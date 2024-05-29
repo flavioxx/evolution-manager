@@ -11,8 +11,6 @@
           <v-text-field
             v-model="connection.host"
             label="URL"
-            hide
-            style="display: none"
             value="https://evo2.fmhospeda.com"
             ref="hiddenHostInput"
           />
