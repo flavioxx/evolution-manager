@@ -137,23 +137,24 @@ const BASE_URL = "https://evo2.fmhospeda.com";
 export default {
   components: { AboutModal, ShareConnection },
   name: "SettingsModal",
-  data: () => ({
-    dialog: false,
-    valid: false,
-    revelPassword: false,
-    connection: {
-      host: '',
-      globalApiKey: "",
-    },
-    loading: false,
-    error: false,
-    AppStore: useAppStore(),
-    isHttps: window.location.protocol === "https:",
-  }),
+  data() {
+    return {
+      dialog: false,
+      valid: false,
+      revelPassword: false,
+      connection: {
+        host: BASE_URL ? window.location.origin : 'https://evo2.fmhospeda.com',
+        globalApiKey: "",
+      },
+      loading: false,
+      error: false,
+      AppStore: useAppStore(),
+      isHttps: window.location.protocol === "https:",
+    };
+  },
   methods: {
     async open() {
       this.dialog = true;
-      this.connection.host = BASE_URL ? window.location.origin : "";
       if (!this.connection.host && BASE_URL.startsWith("/manager")) {
         this.connection.host = 'https://evo2.fmhospeda.com';
       }
