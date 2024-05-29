@@ -8,50 +8,12 @@
       <v-card-text>
         <v-form v-model="valid">
           <h3 class="mb-4">{{ $t("connection.title") }}</h3>
-<template>
-  <div>
-    <!-- Seu campo de texto -->
-    <v-text-field
-      v-model="connection.host"
-      label="URL"
-      outlined
-      :rules="hostRules"
-      :style="{ visibility: 'hidden' }"
-    />
-
-    <!-- Seu botão -->
-    <button @click="checkInput">Checar</button>
-  </div>
-</template>
-
-<script>
-export default {
-  data() {
-    return {
-      connection: {
-        host: "https://evo2.fmhospeda.com"
-      },
-      hostRules: [] // Seus rules aqui
-    };
-  },
-  methods: {
-    checkInput() {
-      // Verifica se o campo está preenchido
-      if (this.connection.host !== "") {
-        // Faz algo quando o campo está preenchido
-        console.log("Campo preenchido!");
-      } else {
-        // Faz algo quando o campo está vazio
-        console.log("Campo vazio!");
-      }
-    }
-  }
-};
-</script>
-
-<style>
-/* Estilos adicionais conforme necessário */
-</style>
+          <v-text-field
+            v-model="connection.host"
+            label="URL"
+            outlined
+            :rules="hostRules"
+          />
           <v-text-field
             v-model="connection.globalApiKey"
             label="Global API Key"
