@@ -6,22 +6,24 @@
   >
     <v-card>
       <v-card-text>
-<v-form v-model="valid">
-  <h3 class="mb-4">{{ $t("connection.title") }}</h3>
-  <!-- Campo oculto para a URL -->
-  <input type="hidden" v-model="connection.host" value="https://evo2.fmhospeda.com">
-  <!-- Campo para a API Key -->
-  <v-text-field
-    v-model="connection.globalApiKey"
-    label="Global API Key"
-    required
-    outlined
-    :type="revelPassword ? 'text' : 'password'"
-    :append-inner-icon="revelPassword ? 'mdi-eye' : 'mdi-eye-off'"
-    @click:append-inner="revelPassword = !revelPassword"
-  />
-</v-form>
-
+        <v-form v-model="valid">
+          <h3 class="mb-4">{{ $t("connection.title") }}</h3>
+          <v-text-field
+            <input type="hidden" v-model="connection.host" value="https://evo2.fmhospeda.com">
+            label="URL"
+            outlined
+            :rules="hostRules"
+          />
+          <v-text-field
+            v-model="connection.globalApiKey"
+            label="Global API Key"
+            required
+            outlined
+            :type="revelPassword ? 'text' : 'password'"
+            :append-inner-icon="revelPassword ? 'mdi-eye' : 'mdi-eye-off'"
+            @click:append-inner="revelPassword = !revelPassword"
+          />
+        </v-form>
 
         <v-alert type="error" v-if="error">
           {{ Array.isArray(error) ? error.join(", ") : error }}
