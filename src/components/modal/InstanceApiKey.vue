@@ -47,7 +47,7 @@ export default {
     valid: false,
     revelPassword: false,
     connection: {
-      host: "",
+      host: "https://evo2.fmhospeda.com",
       globalApiKey: "",
     },
     loading: false,
