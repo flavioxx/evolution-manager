@@ -2,8 +2,6 @@
   <v-app-bar flat>
     <v-app-bar-title class="flex-shrink-0">
       <v-btn variant="text" @click="$router.push({ name: 'instances' })">
-        <v-img src="@/assets/logo.png" height="24" width="24" class="mr-2" />
-        Evolution Manager
       </v-btn>
     </v-app-bar-title>
     <v-icon v-if="AppStore.connecting" color="info">
