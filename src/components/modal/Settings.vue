@@ -146,12 +146,15 @@ export default {
     };
   },
   methods: {
-    async open() {
-      this.dialog = true;
-      if (!this.connection.host && BASE_URL.startsWith("/manager")) {
-        this.connection.host = 'https://evo2.fmhospeda.com';
-      }
-    },
+async open() {
+  this.dialog = true;
+  if (!this.connection.host) {
+    this.connection.host = BASE_URL ? window.location.origin : 'https://evo2.fmhospeda.com';
+  }
+  if (!this.connection.host && BASE_URL.startsWith("/manager")) {
+    this.connection.host = 'https://evo2.fmhospeda.com';
+  }
+},
     share() {
       const connection = Object.assign({}, this.AppStore.connection);
       this.$refs.share.open(connection);
