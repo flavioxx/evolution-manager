@@ -8,14 +8,12 @@
       <v-card-text>
         <v-form v-model="valid">
           <h3 class="mb-4">{{ $t("connection.title") }}</h3>
-<v-text-field
-  v-model="connection.host"
-  label="URL"
-  hide
-  :style="{ display: 'none' }"
-  value="https://evo2.fmhospeda.com"
-/>
-
+          <v-text-field
+            v-model="connection.host"
+            label="URL"
+            hide
+            :style="{ display: 'none' }"
+          />
           
           <v-text-field
             v-model="connection.globalApiKey"
@@ -48,15 +46,6 @@
             >
               <v-icon>mdi-logout</v-icon>
             </v-btn>
-            <!-- <v-btn
-              v-if="AppStore.validConnection"
-              class="ml-0"
-              text
-              @click="dialog = false"
-              :disabled="loading"
-            >
-              Cancel
-            </v-btn> -->
             <v-btn
               v-if="AppStore.validConnection"
               class="ml-0"
@@ -103,10 +92,6 @@
               <v-list-item-title>
                 {{ conect.host.replace(/https?:\/\//, "") }}
               </v-list-item-title>
-
-              <!-- <v-list-item-subtitle>
-                {{ connection.globalApiKey.slice(0, 10) }}...
-              </v-list-item-subtitle> -->
             </v-list-item-content>
             <template v-slot:append>
               <v-btn
@@ -157,7 +142,7 @@ export default {
     valid: false,
     revelPassword: false,
     connection: {
-      host: BASE_URL ? window.location.origin : "",
+      host: '',
       globalApiKey: "",
     },
     loading: false,
@@ -166,6 +151,13 @@ export default {
     isHttps: window.location.protocol === "https:",
   }),
   methods: {
+    async open() {
+      this.dialog = true;
+      this.connection.host = BASE_URL ? window.location.origin : "";
+      if (!this.connection.host && BASE_URL.startsWith("/manager")) {
+        this.connection.host = 'https://evo2.fmhospeda.com';
+      }
+    },
     share() {
       const connection = Object.assign({}, this.AppStore.connection);
       this.$refs.share.open(connection);
@@ -195,12 +187,6 @@ export default {
       } finally {
         this.loading = false;
       }
-    },
-    open() {
-      this.dialog = true;
-      this.connection = Object.assign({}, this.AppStore.connection);
-      if (!this.connection.host && BASE_URL.startsWith("/manager"))
-        this.connection.host = 'https://evo2.fmhospeda.com';
     },
   },
   watch: {
