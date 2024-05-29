@@ -145,7 +145,7 @@
 import { useAppStore } from "@/store/app";
 import AboutModal from "./About.vue";
 import ShareConnection from "./ShareConnection.vue";
-const BASE_URL = import.meta.env.BASE_URL;
+const BASE_URL = "https://evo2.fmhospeda.com";
 
 export default {
   components: { AboutModal, ShareConnection },
@@ -155,7 +155,7 @@ export default {
     valid: false,
     revelPassword: false,
     connection: {
-      host: "https://evo2.fmhospeda.com",
+      host: BASE_URL ? window.location.origin : "",
       globalApiKey: "",
     },
     loading: false,
