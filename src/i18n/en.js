@@ -91,7 +91,7 @@ export default {
     conversationPending: "Start conversation as pending",
     conversationPendingHelp: "Starts the conversation as pending instead of open",
     autoCreate: "Create Inbox",
-    autoCreateHelp: "Creates the inbox in Chatwoot if it doesn't exist",
+    autoCreateHelp: "Creates the inbox in painel if it doesn't exist",
     config: {
       btn: "How to configure Chatwoot?",
       title: "How to configure Chatwoot inbox?",
