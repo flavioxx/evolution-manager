@@ -94,6 +94,8 @@
                 color="error"
                 :disabled="loading"
               >
+                <v-icon>mdi-delete</v-icon>
+              </v-btn>
               <v-btn
                 icon
                 v-else
