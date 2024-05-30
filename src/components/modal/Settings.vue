@@ -44,17 +44,7 @@
             >
               <v-icon>mdi-logout</v-icon>
             </v-btn>
-            <v-btn
-              v-if="AppStore.validConnection"
-              class="ml-0"
-              text
-              @click="share"
-              :disabled="loading"
-              icon
-              size="small"
-            >
-              <v-icon>mdi-share-variant</v-icon>
-            </v-btn>
+
             <v-btn
               color="success"
               class="ml-0"
