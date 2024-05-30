@@ -7,7 +7,7 @@
       v-ripple
     >
       <v-icon start>mdi-robot-happy</v-icon>
-      Typebot
+      Bot Automático
       <v-spacer></v-spacer>
       <v-btn
         size="small"
