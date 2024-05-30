@@ -91,7 +91,7 @@ export default {
     conversationPending: "Iniciar conversa como pendente",
     conversationPendingHelp: "Inicia a conversa como pendente ao invés de aberta",
     autoCreate: "Criar Caixa de Entrada",
-    autoCreateHelp: "Cria a caixa de entrada no Chatwoot caso ela não exista",
+    autoCreateHelp: "Cria a caixa de entrada no painel de atendimento caso ela não exista",
     config: {
       btn: "Como configurar o chatwoot?",
       title: "Como configurar a caixa de entrada do Chatwoot?",
