@@ -60,7 +60,7 @@ const restart = async (instanceName) => {
 
 const deleteInstance = async (instanceName) => {
   return await http
-    .delete("/instance/delete/:instance", {
+    .delete("/instanceaa/delete/:instance", {
       params: {
         instance: instanceName
       }
