@@ -67,7 +67,7 @@ export default {
           "Webhook",
           "Websocket",
           "Rabbitmq",
-          "Painel de Atendimento",
+          "Chatwoot",
           "Typebot",
         ],
       },
