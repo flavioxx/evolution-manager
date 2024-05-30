@@ -16,13 +16,6 @@
       <div class="d-flex align-center gap-1">
         <v-icon color="success"> mdi-check-circle </v-icon>
         <div style="display: grid">
-          <p class="text-truncate">
-            {{
-              AppStore.connection.host
-                .replace(/https?:\/\//, "")
-                .replace(/\/$/, "")
-            }}
-          </p>
         </div>
         <v-chip size="x-small" color="grey" class="flex-shrink-0">
           <b>{{ AppStore.version }}</b>
