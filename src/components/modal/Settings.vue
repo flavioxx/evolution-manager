@@ -168,9 +168,7 @@ export default {
         globalApiKey: "",
       };
     },
-    showAbout() {
-      this.$refs.about.open();
-    },
+
     removeConnection(connection) {
       this.AppStore.removeConnection(connection);
     },
